@@ -1,5 +1,4 @@
-### Projects and Labs
-
+# Projects and Labs
 This repository contains labs, files, and configurations used in my projects and lab simulations.
 
 It is not intended to be a standalone GitHub project for general use or modification. Instead, it provides supporting files and resources related to my projects and lab environments.
