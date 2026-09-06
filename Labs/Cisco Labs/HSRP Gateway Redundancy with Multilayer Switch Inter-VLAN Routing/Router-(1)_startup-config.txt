@@ -1,0 +1,85 @@
+!
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router-1
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ ip address 10.1.1.2 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/1
+ ip address 172.16.10.2 255.255.255.248
+ duplex auto
+ speed auto
+ standby version 2
+ standby 1 ip 172.16.10.1
+ standby 1 priority 110
+ standby 1 preempt
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 10.1.1.1 
+ip route 192.168.10.0 255.255.255.0 172.16.10.4 
+ip route 192.168.20.0 255.255.255.0 172.16.10.4 
+ip route 192.168.30.0 255.255.255.0 172.16.10.4 
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
