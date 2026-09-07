@@ -1,0 +1,107 @@
+!
+version 15.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router-1
+!
+!
+!
+!
+ip dhcp excluded-address 192.168.10.1 192.168.10.9
+ip dhcp excluded-address 192.168.10.100 192.168.10.254
+ip dhcp excluded-address 192.168.20.1 192.168.20.99
+ip dhcp excluded-address 192.168.20.200 192.168.20.254
+!
+ip dhcp pool VLAN-10
+ network 192.168.10.0 255.255.255.0
+ default-router 192.168.10.1
+ dns-server 8.8.8.8
+ip dhcp pool VLAN-20
+ network 192.168.20.0 255.255.255.0
+ default-router 192.168.20.1
+ dns-server 8.8.8.8
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ ip address 172.16.10.2 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface GigabitEthernet0/0/1.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.2 255.255.255.0
+ standby version 2
+ standby 10 ip 192.168.10.1
+ standby 10 priority 110
+ standby 10 preempt
+!
+interface GigabitEthernet0/0/1.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.2 255.255.255.0
+ standby version 2
+ standby 20 ip 192.168.20.1
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 172.16.10.1 
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
