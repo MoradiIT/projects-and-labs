@@ -1,0 +1,95 @@
+!
+version 16.6.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router-3
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ ip address 10.1.3.1 255.255.255.248
+ ip ospf 1 area 0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ shutdown
+!
+interface Serial0/1/0
+ ip address 10.1.2.2 255.255.255.252
+ encapsulation ppp
+ ip ospf 1 area 0
+ clock rate 2000000
+!
+interface Serial0/1/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ router-id 3.3.3.3
+ log-adjacency-changes
+ auto-cost reference-bandwidth 1000
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
