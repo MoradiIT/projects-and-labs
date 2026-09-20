@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Access Portal | XCo Corporation</title>
+
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f1f5f9;
+        color: #1e293b;
+    }
+
+    .header {
+        background: #0f172a;
+        color: white;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .secure {
+        font-size: 13px;
+        color: #94a3b8;
+    }
+
+    .container {
+        max-width: 1050px;
+        margin: 55px auto;
+        padding: 0 25px;
+    }
+
+    .welcome {
+        margin-bottom: 30px;
+    }
+
+    .welcome h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+        color: #0f172a;
+    }
+
+    .welcome p {
+        color: #64748b;
+        font-size: 16px;
+    }
+
+    .portal {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 28px;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+
+    .icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        background: #e0f2fe;
+        color: #0369a1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .card h2 {
+        font-size: 19px;
+        margin-bottom: 10px;
+        color: #0f172a;
+    }
+
+    .card p {
+        color: #64748b;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 22px;
+    }
+
+    .button {
+        display: inline-block;
+        background: #0284c7;
+        color: white;
+        text-decoration: none;
+        padding: 10px 18px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .button:hover {
+        background: #0369a1;
+    }
+
+    .status {
+        margin-top: 30px;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 20px 25px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .status-dot {
+        width: 10px;
+        height: 10px;
+        background: #22c55e;
+        border-radius: 50%;
+    }
+
+    .status-text {
+        font-size: 14px;
+        color: #475569;
+    }
+
+    .footer {
+        margin-top: 60px;
+        padding: 25px;
+        text-align: center;
+        color: #94a3b8;
+        font-size: 12px;
+    }
+
+    @media (max-width: 800px) {
+        .portal {
+            grid-template-columns: 1fr;
+        }
+
+        .header {
+            padding: 18px 25px;
+        }
+    }
+</style>
+
+
+</head>
+
+<body>
+
+
+<header class="header">
+    <div class="logo">Xco CORPORATION</div>
+    <div class="secure">REMOTE ACCESS PORTAL</div>
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+        <h1>Remote Access Portal</h1>
+        <p>
+            Secure access to corporate resources from outside the organization.
+        </p>
+    </section>
+
+    <section class="portal">
+
+        <div class="card">
+            <div class="icon">VPN</div>
+            <h2>Corporate VPN</h2>
+            <p>
+                Connect securely to the corporate network and access
+                internal resources remotely.
+            </p>
+            <a href="#" class="button">Connect to VPN</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">WEB</div>
+            <h2>Remote Applications</h2>
+            <p>
+                Access authorized business applications and services
+                through the remote application portal.
+            </p>
+            <a href="#" class="button">Open Applications</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">RDP</div>
+            <h2>Remote Desktop</h2>
+            <p>
+                Access your assigned workstation or remote desktop
+                environment from an external network.
+            </p>
+            <a href="#" class="button">Start Session</a>
+        </div>
+
+    </section>
+
+    <div class="status">
+        <div class="status-dot"></div>
+        <div class="status-text">
+            Remote access services are operational.
+        </div>
+    </div>
+
+    <footer class="footer">
+        © 2026 ACME Corporation · Information Technology Department<br>
+        Authorized users only. All access is monitored and logged.
+    </footer>
+
+</main>
+
+
+</body>
+</html>
